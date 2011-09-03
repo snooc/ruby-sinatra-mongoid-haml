@@ -1,0 +1,17 @@
+%h1 #{title}
+%h3 #{blog.title}
+
+%p #{blog.body}
+
+%p#blog_date
+  last update #{blog.modified_at}
+
+%p#blog_date 
+  created on #{blog.created_at}
+ 
+%p 
+  %a(href='/edit.#{blog._id}') Edit
+  &nbsp;
+  %a(class='destroy' href='/#{blog._id}') Delete
+  &nbsp;
+  %a(href='/blogs') Back

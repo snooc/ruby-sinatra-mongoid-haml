@@ -1,0 +1,16 @@
+%h1 #{title}
+%fieldset
+  %p Create a new Blog
+  %form(action="/new" method="post")
+    %ul
+      %li
+        %label(for= "title") Title
+        %br
+        %input(type= "text" name= "blog[title]")
+      %li
+        %label(for= "body") Body
+        %br
+        %textarea(name = "blog[body]")
+    %input(type= "submit" value= "Save" class= "button")
+    &nbsp;
+    %a(href="/blogs") Back

@@ -1,0 +1,14 @@
+%h1 #{title}
+%a(href="/new") New Blog
+%hr
+#blogs
+- blogs.each do |blog|
+  #blog
+    #blog_title
+      %a(href='/show.#{blog._id}') #{blog.title}
+    #blog_body
+      =blog.body
+
+    %a(href='/edit.#{blog._id}') Edit
+    &nbsp;
+    %a(class='destroy' href='/#{blog._id}') Delete

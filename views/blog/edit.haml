@@ -1,0 +1,17 @@
+%h1 #{title}
+%fieldset
+  %p Edit Blog
+  %form(action="/edit.#{blog._id}" method="post")
+    %input(type= "hidden" name= "_method" value="PUT")
+    %ul
+      %li
+        %label(for= "title") Title
+        %br
+        %input(type= "text" name= "blog[title]" value="#{blog.title}")
+      %li
+        %label(for= "body") Body
+        %br
+        %textarea(name = "blog[body]") #{blog.body}
+    %input(type= "submit" value= "Edit" class= "button")
+    &nbsp;
+    %a(href="/blogs") Back
